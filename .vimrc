@@ -24,6 +24,9 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" Sets visual line numbers
+set number
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -51,6 +54,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'nsf/gocode', {'rtp':'vim/'}
@@ -137,9 +141,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" Set the 80 character marker
-set colorcolumn=80
-
+" Set the 100 character marker
+set colorcolumn=100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -157,6 +160,8 @@ catch
 endtry
 
 set background=dark
+
+highlight ColorColumn ctermbg=7
 
 " Set extra options when running in GUI mode
 if has("gui_running")
